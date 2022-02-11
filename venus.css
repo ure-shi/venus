@@ -1,0 +1,223 @@
+@font-face {
+  font-family: Chewy;
+  src: url("Chewy.ttf")
+}
+
+@keyframes wave-ani {
+   0% {background-position: 0pt 0pt;}
+   25% {background-position: 10pt 5pt;}
+   50% {background-position: 20pt -5pt;}
+   75% {background-position: 30pt 5pt;}
+   100% {background-position: 40pt -5pt;}
+}
+
+@keyframes ナズー-ani{
+  0%{transform: translate(-50%, -50%) rotate(0deg);}
+  5%{transform: translate(-50%, -50%) rotate(1deg);}
+  10%{transform: translate(-50%, -50%) rotate(-1deg);}
+  15%{transform: translate(-50%, -50%) rotate(1deg);}
+  20%{transform: translate(-50%, -50%) rotate(-1deg);}
+  25%{transform: translate(-50%, -50%) rotate(0deg);}
+  100%{transform: translate(-50%, -50%) rotate(0deg);}
+}
+
+@keyframes venus-ani{
+  0%{transform: translate(-50%, -50%) rotate(0deg);}
+  5%{transform: translate(-50%, -50%) rotate(1deg);}
+  10%{transform: translate(-50%, -50%) rotate(-1deg);}
+  15%{transform: translate(-50%, -50%) rotate(1deg);}
+  20%{transform: translate(-50%, -50%) rotate(-1deg);}
+  25%{transform: translate(-50%, -50%) rotate(0deg);}
+  100%{transform: translate(-50%, -50%) rotate(0deg);}
+}
+
+@keyframes venus-ani-b{
+  0%{transform: translate(-35%, -50%) rotate(0deg);}
+  5%{transform: translate(-35%, -50%) rotate(1deg);}
+  10%{transform: translate(-35%, -50%) rotate(-1deg);}
+  15%{transform: translate(-35%, -50%) rotate(1deg);}
+  20%{transform: translate(-35%, -50%) rotate(-1deg);}
+  25%{transform: translate(-35%, -50%) rotate(0deg);}
+  100%{transform: translate(-35%, -50%) rotate(0deg);}
+}
+
+div.waves{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 200pt;
+  background-image: url('waves.svg');
+  animation: wave-ani 5s ease-in-out 0s infinite alternate;
+}
+
+div.venus-waveblock {
+  position: fixed;
+  transform: translate(0, -50%);
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 100pt;
+  border-top: 20pt solid var(--theme-color-a);
+  border-bottom: 20pt solid var(--theme-color-a);
+  background-color: var(--bg-color);
+}
+
+div.venus-text {
+  position: absolute;
+  left: 25%;
+  top: 50%;
+  width: 540pt;
+  height: 90pt;
+  transform: translate(-50%, -50%);
+  background-image: url('venus.svg');
+  animation: venus-ani 5s ease-in-out 1.5s infinite forwards;
+}
+
+div.ナズー-waveblock {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100pt;
+  height: 100%;
+  border-left: 20pt solid var(--theme-color-a);
+  border-right: 20pt solid var(--theme-color-a);
+  background-color: var(--bg-color);
+  transform: translate(-50%, 0);
+}
+
+div.ナズー-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 90pt;
+  height: 315pt;
+  transform: translate(-50%, -50%);
+  background-image: url('nihon.svg');
+  animation: ナズー-ani 5s ease-in-out 2.5s infinite forwards;
+}
+
+div.user-area {
+  position: fixed;
+  top: 20pt;
+  left: 50%;
+  right: 20%;
+  bottom: 20pt;
+  border: 20pt solid var(--theme-color-a);
+  border-radius: 40pt;
+  background-color: var(--bg-color);
+}
+
+div.user-area h1 {
+  text-align: center;
+  margin: 0;
+  margin-top: 20pt;
+  border: 0;
+  font-size: 30pt;
+  font-family: 'Chewy';
+  color: #122340;
+}
+
+div.user-area p {
+  text-align: center;
+  margin: 0;
+  border: 0;
+  font-size: 15pt;
+  font-family: 'Chewy';
+  color: #5A6A7A;
+  margin-bottom: 20pt;
+}
+
+@media (max-width: 500px) and (orientation:portrait){
+  div.user-area {
+    top: 120pt;
+    left: 20pt;
+    right: 20pt;
+    bottom: 20pt;
+    border: 15pt solid var(--theme-color-a);
+    border-radius: 30pt;
+  }
+  div.ナズー-waveblock {
+    display: none;
+  }
+  div.venus-waveblock {
+    transform: translate(-50%, 0);
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 70pt;
+    border: 15pt solid var(--theme-color-a);
+  }
+  div.venus-text {
+    left: 50%;
+    top: 50%;
+    width: 330pt;
+    height: 55pt;
+  }
+  div.user-area h1 {
+    margin: 0;
+    margin-top: 10pt;
+    border: 0;
+    font-size: 22pt;
+  }
+  div.user-area p {
+    margin: 0;
+    border: 0;
+    font-size: 14pt;
+    margin-bottom: 15pt;
+  }
+}
+
+@media (max-width: 1300px) and (min-width: 500px){
+  div.user-area {
+    top: 140pt;
+    left: 140pt;
+    right: 20pt;
+    bottom: 20pt;
+    border: 15pt solid var(--theme-color-a);
+    border-radius: 30pt;
+  }
+  div.ナズー-waveblock {
+    top: 0;
+    left: 20pt;
+    width: 70pt;
+    height: 100%;
+    border-left: 15pt solid var(--theme-color-a);
+    border-right: 15pt solid var(--theme-color-a);
+    background-color: var(--bg-color);
+    transform: translate(0, 0);
+  }
+  div.venus-waveblock {
+    transform: translate(-50%, 0);
+    top: 20pt;
+    left: 50%;
+    width: 100%;
+    height: 70pt;
+    border: 15pt solid var(--theme-color-a);
+  }
+  div.ナズー-text {
+    width: 60pt;
+    height: 210pt;
+  }
+  div.venus-text {
+    left: 50%;
+    top: 50%;
+    width: 330pt;
+    height: 55pt;
+    transform: translate(-35%, -50%);
+    animation: venus-ani-b 5s ease-in-out 1.5s infinite forwards;
+  }
+  div.user-area h1 {
+    margin: 0;
+    margin-top: 10pt;
+    border: 0;
+    font-size: 30pt;
+  }
+  div.user-area p {
+    margin: 0;
+    border: 0;
+    font-size: 15pt;
+    margin-bottom: 15pt;
+  }
+}
