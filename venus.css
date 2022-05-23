@@ -41,6 +41,14 @@
   100%{transform: translate(-35%, -50%) rotate(0deg);}
 }
 
+div.user-area h1.sparkles{
+  display: block;
+}
+
+div.user-area h1.sparkle-less{
+  display: none;
+}
+
 div.waves{
   position: fixed;
   top: 0;
@@ -107,6 +115,8 @@ div.user-area {
   border: 20pt solid var(--theme-color-a);
   border-radius: 40pt;
   background-color: var(--bg-color);
+  overflow-x:hidden;
+  overflow-y:auto;
 }
 
 div.user-area h1 {
@@ -129,47 +139,7 @@ div.user-area p {
   margin-bottom: 20pt;
 }
 
-@media (max-width: 500px) and (orientation:portrait){
-  div.user-area {
-    top: 120pt;
-    left: 20pt;
-    right: 20pt;
-    bottom: 20pt;
-    border: 15pt solid var(--theme-color-a);
-    border-radius: 30pt;
-  }
-  div.ナズー-waveblock {
-    display: none;
-  }
-  div.venus-waveblock {
-    transform: translate(-50%, 0);
-    top: 0;
-    left: 50%;
-    width: 100%;
-    height: 70pt;
-    border: 15pt solid var(--theme-color-a);
-  }
-  div.venus-text {
-    left: 50%;
-    top: 50%;
-    width: 330pt;
-    height: 55pt;
-  }
-  div.user-area h1 {
-    margin: 0;
-    margin-top: 10pt;
-    border: 0;
-    font-size: 22pt;
-  }
-  div.user-area p {
-    margin: 0;
-    border: 0;
-    font-size: 14pt;
-    margin-bottom: 15pt;
-  }
-}
-
-@media (max-width: 1300px) and (min-width: 500px){
+@media (max-width: 1400px) and (min-width: 625px){
   div.user-area {
     top: 140pt;
     left: 140pt;
@@ -218,6 +188,117 @@ div.user-area p {
     margin: 0;
     border: 0;
     font-size: 15pt;
+    margin-bottom: 15pt;
+  }
+}
+
+@media (max-width: 625px) and (min-width: 450px){
+  div.user-area h1.sparkles{
+    display: none;
+  }
+  
+  div.user-area h1.sparkle-less{
+    display: block;
+  }
+  div.user-area {
+    top: 140pt;
+    left: 140pt;
+    right: 20pt;
+    bottom: 20pt;
+    border: 15pt solid var(--theme-color-a);
+    border-radius: 30pt;
+  }
+  div.ナズー-waveblock {
+    z-index: 1;
+    top: 0;
+    left: 20pt;
+    width: 70pt;
+    height: 100%;
+    border-left: 15pt solid var(--theme-color-a);
+    border-right: 15pt solid var(--theme-color-a);
+    background-color: var(--bg-color);
+    transform: translate(0, 0);
+  }
+  div.venus-waveblock {
+    z-index: 2;
+    transform: translate(-50%, 0);
+    top: 20pt;
+    left: 50%;
+    width: 100%;
+    height: 70pt;
+    border: 15pt solid var(--theme-color-a);
+  }
+  div.ナズー-text {
+    width: 60pt;
+    height: 210pt;
+  }
+  div.venus-text {
+    z-index: 3;
+    left: 50%;
+    top: 50%;
+    width: 330pt;
+    height: 55pt;
+    transform: translate(-50%, -50%);
+    /*animation: venus-ani-b 5s ease-in-out 1.5s infinite forwards;*/
+  }
+  div.user-area h1 {
+    margin: 0;
+    margin-top: 10pt;
+    border: 0;
+    font-size: 30pt;
+  }
+  div.user-area p {
+    margin: 0;
+    border: 0;
+    font-size: 15pt;
+    margin-bottom: 15pt;
+  }
+}
+
+@media (max-width: 450px) and (orientation:portrait){
+  div.user-area h1.sparkles{
+    display: none;
+  }
+  
+  div.user-area h1.sparkle-less{
+    display: block;
+  }
+
+  div.user-area {
+    top: 120pt;
+    left: 20pt;
+    right: 20pt;
+    bottom: 20pt;
+    border: 15pt solid var(--theme-color-a);
+    border-radius: 30pt;
+  }
+  div.ナズー-waveblock {
+    display: none;
+  }
+  div.venus-waveblock {
+    transform: translate(-50%, 0);
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 70pt;
+    border: 15pt solid var(--theme-color-a);
+  }
+  div.venus-text {
+    left: 50%;
+    top: 50%;
+    width: 330pt;
+    height: 55pt;
+  }
+  div.user-area h1 {
+    margin: 0;
+    margin-top: 10pt;
+    border: 0;
+    font-size: 30pt;
+  }
+  div.user-area p {
+    margin: 0;
+    border: 0;
+    font-size: 14pt;
     margin-bottom: 15pt;
   }
 }
